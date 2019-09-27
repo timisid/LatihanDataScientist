@@ -1,0 +1,24 @@
+{% extends 'layout.html' %}
+
+{% block body %}
+    <h1>Ini Page Table Data</h1>
+    <table class="table">
+        <thead>
+            {% for item in data.columns%}
+                <th>{{item}}</th>
+            {% endfor %}
+        </thead>
+        <tbody>
+            {% for index, item in data.iterrows() %}
+                <tr>
+                    <!-- Pakai looping keluarin semua tabel -->
+                    {% for a in item %}
+                        <td>{{a}}</td>
+                    {% endfor%}
+                    <!-- Kalau Selective Tabel -->
+                    <!-- <td>{{item['Name']}}</td> -->
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+{% endblock body %}
